@@ -10,8 +10,11 @@ Golf is an increasingly popular pastime among seniors, offering physical and men
 
 ParSight is an autonomous drone-based, real-time golf ball tracking system designed to enhance visibility for senior golfers. The system maintains visual contact with the ball throughout its flight, flies stably, and makes fast, accurate, and robust tracking decisions in real time. To enable fast visual detection using its onboard RGB camera, we use a red golf ball and an HSV-based red filter to enhance red tones while suppressing blue and green channels, followed by added Gaussian blur to reduce image noise. The system uses OpenCV contour detection to identify red regions, scoring them based on size and roundness to select the most likely golf ball candidate. From the selected contour, the center point is extracted and used for tracking, which is performed through Image Based Visual Servoing, where pixel error, the offset between the ball’s position on the screen and the image center, is transformed into a real-world pose correction. ParSight uses a PD controller to determine the drone’s movement, enabling smooth, responsive flight without overshooting. Once the system detects the ball, ParSight autonomously takes off, ascends to tracking height, and locks onto its target ball. When the ball is launched (via a catapult proxy), the drone tracks its flight through rapid acceleration, airtime, bounces, and eventual rolling to a stop. It continues to hover over the ball’s final position, providing constant visual feedback to aid users in locating it.
 
-<img src="Images/flying.gif" alt="MY580 Demo" width="260"/>
-<img src="Images/rviz.gif" alt="Rviz Demo" width="260"/>
+<p align="left">
+  <img src="Images/flying.gif" alt="MY580 Demo" width="270"/>
+  <img src="Images/rviz.gif" alt="Rviz Demo" width="270"/>
+</p>
+
 
 ParSight achieved a detection accuracy of 95% with only a 3% false positive rate. Although processing latency was just 30 ms, the total system reaction time was approximately 350 ms due to hardware constraints such as camera frame rate and resolution. As a result, the maximum positional error reached 75.51 cm, though the system could still reliably recover and reacquire the ball. These results demonstrated that ParSight met the objectives of the MVP: a working prototype that detects and tracks a golf ball quickly and fairly robustly in real-testing conditions.
 
