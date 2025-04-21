@@ -24,6 +24,3 @@ If issues arise during setup or flight:
 - Reboot the Cube flight controller.
 - Swap in a fully charged battery.
 - Recalibrate sensors if alignment issues persist.
-
-## GUI
-TODO
